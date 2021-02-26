@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../static/css/style.css"/>
+<link rel="stylesheet" href="../static/style.css"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -33,7 +33,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s8 w3-bar">
-      <span>Welcome! <strong></strong></span><br>
+      <!-- <span>Welcome! <strong></strong></span><br> -->
 
     </div>
   </div>
@@ -43,15 +43,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  Overview</a>
-    <a href="{{ url_for('analysisBYyears') }}" class="w3-bar-item w3-button w3-orange"><i class="fa fa-bullseye fa-fw"></i>  Data Analysis</a>
-    <a href="{{ url_for('analysisBYauthors') }}" class="w3-bar-item w3-button w3-green"><i class="fa fa-users fa-fw"></i> Risk Factor Calculation </a>
-    <a href="{{ url_for('searchtool') }}" class="w3-bar-item w3-button w3-red"><i class="fa fa-bank fa-fw"></i>Biography</a>
+    <a href="layout.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  Overview</a>
+    <a href="data.html" class="w3-bar-item w3-button w3-orange"><i class="fa fa-bullseye fa-fw"></i>  Data Analysis</a>
+    <a href="risk_cal.html" class="w3-bar-item w3-button w3-green"><i class="fa fa-users fa-fw"></i> Risk Factor Calculation </a>
+    <a href="biography.html" class="w3-bar-item w3-button w3-red"><i class="fa fa-bank fa-fw"></i>Biography</a>
 
   </div>
 
 
 </nav>
+
+
+
 
 
 
@@ -64,111 +67,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Header -->
 
   <div margin: 10 auto;>
-
-  <header class="w3-container" style="padding-top:22px;padding-left:2000px">
-    <hr>
-    <h2 class="w3-center">Forms and Lists</h2>
-    </div>
-    
-    <div class="w3-row-padding">
-    
-    <div class="w3-whole" >
-    <form class="w3-container w3-card-4">
-      <h2>Risk Factors Calculation</h2>
-      <div class="w3-section">      
-        <input class="w3-input" type="text" required>
-        <label>Age</label>
-      </div>
-      <div class="w3-section">      
-        <label for="cars">Gender</label>
-            <select id="gender" name="gender_type">
-            <option value="-">Choose your gender</option>
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
-   
-        </select>
-        </div>
-        <label>Precondition</label>
-      <div class="w3-row">
-      <div class="w3-half">
-        <input id="Hypertension" class="w3-check" type="checkbox" checked="checked">
-        <label>Hypertension</label>
-        <br>
-        <input id="Diabetes" class="w3-check" type="checkbox">
-        <label>Diabetes</label>
-        <br>
-        <input id="CAD" class="w3-check" type="checkbox" disabled>
-        <label>Cardiovascular Disease</label>
-        <br>
-        <input id="COPD" class="w3-check" type="checkbox" disabled>
-        <label>Chronic Obstructure Lung</label>
-        <br>
-        <input id="Cancer" class="w3-check" type="checkbox" disabled>
-        <label>Any Cancer</label>
-        <br>
-        <input id="Liver Disease" class="w3-check" type="checkbox" disabled>
-        <label>Liver Disease</label>
-        <br><br>
-      </div>
-    </div>
-
-    <label>Symptoms</label>
-    <div class="w3-row">
-    <div class="w3-half">
-      <input id="Fever" class="w3-check" type="checkbox" checked="checked">
-      <label>Fever</label>
-      <br>
-      <input id="breathe" class="w3-check" type="checkbox">
-      <label>Shortness of Breathe</label>
-      <br>
-      <input id="Cough" class="w3-check" type="checkbox" disabled>
-      <label>Cough</label>
-      <br>
-      <input id="Headache" class="w3-check" type="checkbox" disabled>
-      <label>Headache</label>
-      <br>
-      <input id="Sputum" class="w3-check" type="checkbox" disabled>
-      <label>Sputum</label>
-      <br>
-      <input id="Myalgia" class="w3-check" type="checkbox" disabled>
-      <label>Myalgia</label>
-      <br>
-      <input id="Fatigue" class="w3-check" type="checkbox" disabled>
-      <label>Fatigue</label>
-      <br>
-      <input id="Upperway Congestion" class="w3-check" type="checkbox" disabled>
-      <label>Upperway Congestion</label>
-      <br>
-      <input id="diarrhoea" class="w3-check" type="checkbox" disabled>
-      <label>Diarrhoea</label>
-      <br>
-      <input id="nausea & vomitting" class="w3-check" type="checkbox" disabled>
-      <label>Nausea & Vomitting</label>
-      <br>
-      <input id="appetite" class="w3-check" type="checkbox" disabled>
-      <label>Loss of appetite</label>
-      <br>
-      <input id="sorethroat" class="w3-check" type="checkbox" disabled>
-      <label>Sore throat</label>
-      <br>
-      <input id="chills" class="w3-check" type="checkbox" disabled>
-      <label>Chills</label>
-      <br>
-      <input id="chestpain" class="w3-check" type="checkbox" disabled>
-      <label>Chest pain</label>
-
-      <br>
-      <input id="sense" class="w3-check" type="checkbox" disabled>
-      <label>Loss of sense of smell</label>
-
-      <br><br>
-    </div>
-  </div>
+<br><br><br><br>
+    <img src="../over.jpeg" alt="OVER">
 
 
   <script>
-
-
 
 
     // Get the Sidebar
