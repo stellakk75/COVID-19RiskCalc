@@ -36,6 +36,22 @@ covid_df = pd.read_sql_query(
 def echo():
     return render_template("index.html", text="Serving up cool text from the Flask server!!")
 
+@app.route("/results", methods=['GET', 'POST'])
+def validate_form(form, required):
+    # """Check that all fields in required are present
+    # in the form with a non-empty value.
+    # Return a list of error messages, if there are no errors
+    # this will be the empty list """
+    mortality_risk = []
+    for input in required:
+        value = form.get(input)
+        if value == 1:
+            mortality_risk.append('You are at high mortality risk.')
+        else:
+            mortality_risk.append('You are at low mortality risk.')
+    return mortality_risk
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
