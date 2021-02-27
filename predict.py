@@ -8,7 +8,7 @@ from datetime import date
 # from pgsql import savePredictedResults
 
 # Main Function : Predict diabetes (Logistic Regression)
-def predictRisk(pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, diabetes_pedigree_function, age, user_country, user_state, gender) -> []: 
+def predictRisk(age, hypertension, diabetes, cvd, copd, cancer, kidney_disease, fever, breath, cough, tachypnea, fatigue, diarrhea) -> []: 
 
     ### Initialize:
     # Intialize error = No
@@ -23,17 +23,18 @@ def predictRisk(pregnancies, glucose, blood_pressure, skin_thickness, insulin, b
 
 
         # Convert input to dataframe
-        input = {"pregnancies":[pregnancies], "glucose":[glucose], "blood_pressure":[blood_pressure], \
-                 "skin_thickness":[skin_thickness], "insulin":[insulin], "bmi":[bmi], \
-                 "diabetes_pedigree_function":[diabetes_pedigree_function], "age":[age]}
+        input = {"age":[age], "hypertension":[hypertension], "diabetes":[diabetes], \
+                 "cvd":[cvd], "copd":[copd], "cancer":[cancer], \
+                 "kidney disease":[kidney_disease], "fever":[fever], "shortness of breath":[breath], \
+                "cough":[cough], "tachypnea":[tachypnea], "fatigue":[fatigue], "diarrhea":[diarrhea]}
         input_df = pd.DataFrame(input)
 
         # Load the model from disk
-        filename = "FlaskWebProject/models/LogisticRegression/DiabetesLogisticRegressionModel.sav"
-        diabetes_model = pickle.load(open(filename, 'rb'))
+        filename = "FinalProject/Team4Final/LogisticRegression/predictorRisk.sav"
+        risk_model = pickle.load(open(filename, 'rb'))
 
         # Predict the result from model 
-        predicted_result = diabetes_model.predict(input_df)[0]
+        predicted_result = risk_model.predict(input_df)[0]
         print(("Predicted result : {}").format(predicted_result))
 
 
@@ -50,11 +51,8 @@ def predictRisk(pregnancies, glucose, blood_pressure, skin_thickness, insulin, b
         result_df = pd.DataFrame(result)
         
         # Concatenate the 3 dataframes to match table 
-        diabetes_results_df = pd.concat([input_df, result_df, other_input_df], axis=1)
-        print(diabetes_results_df.head())
-
-        # Save
-        # savePredictedResults(diabetes_results_df)
+        risk_results_df = pd.concat([input_df, result_df, other_input_df], axis=1)
+        print(risk_results_df.head())
 
 
 
