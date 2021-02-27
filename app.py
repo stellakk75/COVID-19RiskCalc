@@ -10,9 +10,26 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 import psycopg2
+import config as creds
+
 
 # create instance of Flask app
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
+CORS(app)
+
+#Define database connection
+conn_string = "host="+ creds.PGHOST +" port="+ "5432" +" dbname="+ creds.PGDATABASE +" user=" + creds.PGUSER \
+                  + " password=" + creds.PGPASSWORD
+
+print(conn_string)
+conn = psycopg2.connect(conn_string)
+print("Connected!")
+  
+
+covid_df = pd.read_sql_query(
+                   ''' SELECT * FROM coviddata 
+                   ''' , conn)
 
 # create route that renders index.html template
 @app.route("/")
