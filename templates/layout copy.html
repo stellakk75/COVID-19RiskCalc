@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", monospace}
+.w3-bar,h1,button {font-family: "Montserrat", monospace}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-red">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="w3-bar-item w3-button">Our Data</a>
+  <a href="#" class="w3-bar-item w3-button">Age Risk</a>
+  <a href="#" class="w3-bar-item w3-button">Our Risk Model</a>
+  <a href="#" class="w3-bar-item w3-button">Risk Calculator</a>
+  <a href="#" class="w3-bar-item w3-button">Correlation</a>
+  <a href="#" class="w3-bar-item w3-button">About Us</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-red"><i class="fa fa-home w3-margin-right"></i>Home</a>
+  <a href="#intro" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Data</a>
+  <a href="#pre" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Age Risk</a>
+  <a href="#Age" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Risk Model</a>
+  <a href="#P&S" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Risk Calculator</a>
+  <a href="#RC" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Correlation</a>
+  <a href="#TK" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
+   
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#intro" class="w3-bar-item w3-button">Our Data</a>
+    <a href="#pre" class="w3-bar-item w3-button">Age Risk</a>
+    <a href="#Age" class="w3-bar-item w3-button">Our Risk Model</a>
+    <a href="#P&S" class="w3-bar-item w3-button">Risk Calculator</a>
+    <a href="#RC" class="w3-bar-item w3-button">Correlation</a>
+    <a href="#TK" class="w3-bar-item w3-button">About Us</a>
+ 
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="../static/images/web.png" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    
+  </div>
+</div>
+
+
+
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="intro">
+
+<div class="w3-half">
+<h2>Our Work</h2>
+<p> Data source. Intent. (Covid, mortality, etc) Questions. Demographics</p>
+</div>
+
+<div class="w3-half">
+<div class="w3-card w3-white">
+  <img src="/w3images/snow.jpg" alt="images" style="width:100%">
+  <div class="w3-container">
+  <h3>Demographics</h3>
+  <h4>Blank</h4>
+  <p>Blank</p>
+  <p>Blank</p>
+  <p>Blank</p>
+  <p>Blank</p>
+  </div>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-red"
+  style="position:absolute;top:-28px;right:24px">+</a>
+</div>
+
+<!-- Preconditions -->
+<div class="w3-row-padding w3-center w3-padding-64 w3-theme-l5" id="pre">
+    <h2>Preconditions</h2>
+    
+</div>
+
+
+<!-- Age -->
+<div class="w3-row-padding w3-center w3-padding-64 w3-theme-l5" id="Age">
+    <h2>Age</h2>
+    
+</div>
+
+
+<!--  Pre-conditions -->
+<div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S">
+    <div class="w3-whole" >
+    
+    <h2>Pre-conditions & Symptoms</h2>
+    </div>
+</div>
+
+{% block content %}{% endblock %}
+
+
+<!-- Calculator -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="RC">
+    <div class="w3-whole" >
+    <form class="w3-container w3-card-4">
+      <h2>Calculate Your Risk</h2>
+      <div class="w3-section">      
+        <input class="w3-input" type="text" required>
+        <label>Age</label>
+      </div>
+      <div class="w3-section">      
+        <label for="cars">Gender</label>
+            <select id="gender" name="gender_type">
+            <option value="-">Choose your gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+   
+        </select>
+        </div>
+      <div class="col-md-6">
+      <div class="w3-half">
+        <label>Precondition</label>
+        <br>
+        <input id="Hypertension" class="w3-check" type="checkbox" checked="checked">
+        <label>Hypertension</label>
+        <br>
+        <input id="Diabetes" class="w3-check" type="checkbox">
+        <label>Diabetes</label>
+        <br>
+        <input id="CAD" class="w3-check" type="checkbox" >
+        <label>Cardiovascular Disease</label>
+        <br>
+        <input id="COPD" class="w3-check" type="checkbox" >
+        <label>Chronic Obstructure Lung</label>
+        <br>
+        <input id="Cancer" class="w3-check" type="checkbox" >
+        <label>Any Cancer</label>
+        <br>
+        <input id="Liver Disease" class="w3-check" type="checkbox" >
+        <label>Liver Disease</label>
+        <br><br>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+    <div class="w3-half">
+      <label>Symptoms</label><br>
+      <input id="Fever" class="w3-check" type="checkbox" checked="checked">
+      <label>Fever</label>
+      <br>
+      <input id="breathe" class="w3-check" type="checkbox">
+      <label>Shortness of Breathe</label>
+      <br>
+      <input id="Cough" class="w3-check" type="checkbox" >
+      <label>Cough</label>
+      <br>
+      <input id="Headache" class="w3-check" type="checkbox" >
+      <label>Headache</label>
+      <br>
+      <input id="Sputum" class="w3-check" type="checkbox" >
+      <label>Sputum</label>
+      <br>
+      <input id="Myalgia" class="w3-check" type="checkbox" >
+      <label>Myalgia</label>
+      <br>
+      <input id="Fatigue" class="w3-check" type="checkbox" >
+      <label>Fatigue</label>
+      <br>
+      <input id="Upperway Congestion" class="w3-check" type="checkbox" >
+      <label>Upperway Congestion</label>
+      <br>
+      <input id="diarrhoea" class="w3-check" type="checkbox" >
+      <label>Diarrhoea</label>
+      <br>
+      <input id="nausea & vomitting" class="w3-check" type="checkbox" >
+      <label>Nausea & Vomitting</label>
+      <br>
+      <input id="appetite" class="w3-check" type="checkbox" >
+      <label>Loss of appetite</label>
+      <br>
+      <input id="sorethroat" class="w3-check" type="checkbox" >
+      <label>Sore throat</label>
+      <br>
+      <input id="chills" class="w3-check" type="checkbox" >
+      <label>Chills</label>
+      <br>
+      <input id="chestpain" class="w3-check" type="checkbox" >
+      <label>Chest pain</label>
+
+      <br>
+      <input id="sense" class="w3-check" type="checkbox" >
+      <label>Loss of sense of smell</label>
+
+      <br><br>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">
+
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="TK">
+    <h2>Team Kitten !</h2>
+    <p>Meet the team</p>
+    
+    <div class="w3-row"><br>
+    
+    <div class="w3-third">
+      <img src="../static/images/Stella.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Stella Kim</h3>
+      <p>Stella</p>
+    </div>
+    
+    <div class="w3-third">
+      <img src=" ../static/images/Sydney.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Sydney Harkins</h3>
+      <p>Sydney</p>
+    </div>
+    
+    <div class="w3-third">
+      <img src="../static/images/sarah.jpeg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+      <h3>Sarah H Lee</h3>
+      <p> meow </p>
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br>
+    <div class="w3-half">
+      <img src="../static/images/Pankaj.png" alt="Boss" style="width:30%" class="w3-circle w3-hover-opacity">
+      <h3> Pankaj</h3>
+      <p>Pankaj</p>
+    </div>
+    
+    <div class="w3-half">
+        <img src="../static/images/Rupali.png" alt="Boss" style="width:30%" class="w3-circle w3-hover-opacity">
+        <h3>Rupali</h3>
+        <p>Rupali</p>
+      </div>
+    </div>
+    </div>
+
+
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-grey w3-padding-15 w3-theme-d1 w3-center">
+    <h4>It was such a pleasure to be in this class</h4>
+    <h4>Good luck everyone!</h4>
+    <br>
+    <h6>P.S. A+ us</h6>
+  
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+      <span class="w3-text w3-padding w3-red w3-hide-small">Go To Top</span>   
+      <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+      <i class="fa fa-chevron-circle-up"></i></span></a>
+    </div>
+  </footer>
+  
+
+
+</body>
+</html>

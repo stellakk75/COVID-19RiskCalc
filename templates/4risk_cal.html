@@ -1,11 +1,5 @@
 {% extends "layout.html" %} {% block content %}
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
   <!-- Header -->
 
   <div margin: 10 auto;>
@@ -23,6 +17,15 @@
       <div class="w3-section">      
         <input class="w3-input" type="text" required name=age>
         <label>Age</label>
+      </div>
+      <div class="w3-section">      
+        <label for="cars">Gender</label>
+            <select id="gender" name="gender_type">
+            <option value="-">Choose your gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+   
+        </select>
       </div>
       <div class="col-md-4">
       <div class="w3-half">
@@ -87,21 +90,17 @@
     
     <div class="w3-row-padding">
 
-    <div class="w3-whole">
+    <!-- <div class="w3-whole">
     <form class="w3-container w3-card-4">
       <label for="output">Your Risk Calculations :</label><input type="text" name="output" value=0></input>
       <div class="col-md-4">
       <div class="w3-half">
     </div>
-  </div>
+  </div> -->
 
 
 
   <script>
-
-
-
-
     // Get the Sidebar
     var mySidebar = document.getElementById("mySidebar");
     
@@ -124,9 +123,8 @@
       mySidebar.style.display = "none";
       overlayBg.style.display = "none";
     }
-    </script>
+  </script>
 
 </body>
 </html>
-
 {% endblock %}

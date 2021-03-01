@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 import psycopg2
-import config as creds
+# import config as creds
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
@@ -25,17 +25,42 @@ app.config['JSON_SORT_KEYS'] = False
 CORS(app)
 
 #Define database connection
-conn_string = "host="+ creds.PGHOST +" port="+ "5432" +" dbname="+ creds.PGDATABASE +" user=" + creds.PGUSER \
-                  + " password=" + creds.PGPASSWORD
+# conn_string = "host="+ creds.PGHOST +" port="+ "5432" +" dbname="+ creds.PGDATABASE +" user=" + creds.PGUSER \
+#                   + " password=" + creds.PGPASSWORD
 
-print(conn_string)
-conn = psycopg2.connect(conn_string)
-print("Connected!")
+# print(conn_string)
+# conn = psycopg2.connect(conn_string)
+# print("Connected!")
   
 
-covid_df = pd.read_sql_query(
-                   ''' SELECT * FROM coviddata 
-                   ''' , conn)
+# covid_df = pd.read_sql_query(
+#                    ''' SELECT * FROM coviddata 
+#                    ''' , conn)
+
+#Routes 
+@app.route("/")
+def home():
+    return render_template('index.html')
+
+@app.route('/ageRisk')
+def ageRisk():
+    return render_template("2age.html")
+
+@app.route('/ourModel')
+def ourModel():
+    return render_template("3model.html")
+
+@app.route('/riskCalculator')
+def riskCalculator():
+    return render_template("4risk_cal.html")
+
+@app.route('/correlation')
+def correlation():
+    return render_template("5corr.html")
+
+@app.route('/aboutUs')
+def aboutUs():
+    return render_template("6bio.html")
 
 def predictRisk(age, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea) -> []: 
 
