@@ -74,7 +74,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <form class="form-horizontal" action="/results" method="POST">
       <h2>Risk Factors Calculation</h2>
       <div class="w3-section">      
-        <input class="w3-input" type="text" required>
+        <input class="w3-input" type="text" required name=age>
         <label>Age</label>
       </div>
       <div class="col-md-4">
@@ -82,22 +82,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <label>Precondition</label>
         <br>
         <!-- <input type=“checkbox” name=hypertension" value=“1” checked> -->
-        <input id="hypertension" class="w3-check" type="checkbox" value=1>
+        <input id="hypertension" class="w3-check" type="checkbox" name="hypertension">
         <label>Hypertension</label>
         <br>
-        <input id="diabetes" class="w3-check" type="checkbox">
+        <input id="diabetes" class="w3-check" type="checkbox" name="diabetes">
         <label>Diabetes</label>
         <br>
-        <input id="cvd" class="w3-check" type="checkbox">
+        <input id="cvd" class="w3-check" type="checkbox" name="cvd">
         <label>Cardiovascular Disease</label>
         <br>
-        <input id="copd" class="w3-check" type="checkbox">
+        <input id="copd" class="w3-check" type="checkbox" name="copd" >
         <label>Chronic Obstructure Lung</label>
         <br>
-        <input id="cancer" class="w3-check" type="checkbox">
+        <input id="cancer" class="w3-check" type="checkbox" name="cancer">
         <label>Any Cancer</label>
         <br>
-        <input id="kidneydisease" class="w3-check" type="checkbox">
+        <input id="kidneydisease" class="w3-check" type="checkbox" name="kidneydisease">
         <label>Chronic Kidney Disease</label>
         <br><br>
       </div>
@@ -106,22 +106,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="col-md-4">
     <div class="w3-half">
       <label>Symptoms</label><br>
-      <input id="Fever" class="w3-check" type="checkbox">
+      <input id="Fever" class="w3-check" type="checkbox" name="fever">
       <label>Fever</label>
       <br>
-      <input id="breath" class="w3-check" type="checkbox">
+      <input id="breath" class="w3-check" type="checkbox" name="breath">
       <label>Shortness of Breath</label>
       <br>
-      <input id="Cough" class="w3-check" type="checkbox">
+      <input id="Cough" class="w3-check" type="checkbox" name="cough">
       <label>Cough</label>
       <br>
-      <input id="tachypnea" class="w3-check" type="checkbox">
+      <input id="tachypnea" class="w3-check" type="checkbox" name="tachypnea">
       <label>Tachypnea (Fast Breathing Rate)</label>
       <br>
-      <input id="Fatigue" class="w3-check" type="checkbox">
+      <input id="Fatigue" class="w3-check" type="checkbox" name="fatigue">
       <label>Fatigue</label>
       <br>
-      <input id="diarrhea" class="w3-check" type="checkbox">
+      <input id="diarrhea" class="w3-check" type="checkbox" name="diarrhea">
       <label>Diarrhea</label>
       <br><br>
 
@@ -142,7 +142,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div class="w3-whole">
     <form class="w3-container w3-card-4">
-      <h2>Your Risk Calculations</h2>
+      <label for="output">Your Risk Calculations :</label><input type="text" name="output" value=0></input>
       <div class="col-md-4">
       <div class="w3-half">
     </div>
