@@ -3,14 +3,20 @@ import os
 import numpy as np
 import pandas as pd
 import sqlalchemy
+import flask
 from flask_cors import CORS
-from flask import Flask, render_template, redirect, jsonify
+from flask import Flask, render_template, redirect, jsonify,request
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 import psycopg2
 import config as creds
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+import pickle
+from datetime import date
 
 
 # create instance of Flask app
@@ -31,25 +37,104 @@ covid_df = pd.read_sql_query(
                    ''' SELECT * FROM coviddata 
                    ''' , conn)
 
+def predictRisk(age, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea) -> []: 
+
+    ### Initialize:
+    # Intialize error = No
+    error_flag = False
+    predicted_result = None
+    input = {"age":[age], "hypertension":[hypertension], "diabetes":[diabetes], \
+                 "cvd":[cvd], "copd":[copd], "cancer":[cancer], \
+                 "kidney disease":[kidneydisease], "fever":[fever], "shortness of breath":[breath], \
+                "cough":[cough], "tachypnea":[tachypnea], "fatigue":[fatigue], "diarrhea":[diarrhea]}
+    input_df = pd.DataFrame(input)
+    filename = "LogisticRegression/predictorRisk1.sav"
+    risk_model = pickle.load(open(filename, 'rb'))
+    predicted_result = risk_model.predict(input_df)[0]
+    print(("Predicted result : {}").format(predicted_result))
+    result = {"outcome":[predicted_result]}
+    result_df = pd.DataFrame(result)
+    return  predicted_result
+
+
 # create route that renders index.html template
-@app.route("/")
+@app.route("/",methods = ["GET","POST"])
 def echo():
-    return render_template("index.html", text="Serving up cool text from the Flask server!!")
+    #return render_template("index.html", text="Serving up cool text from the Flask server!!")
+    
+    return render_template("risk_cal.html")
 
 @app.route("/results", methods=['GET', 'POST'])
-def validate_form(form, required):
-    # """Check that all fields in required are present
-    # in the form with a non-empty value.
-    # Return a list of error messages, if there are no errors
-    # this will be the empty list """
-    mortality_risk = []
-    for input in required:
-        value = form.get(input)
-        if value == 1:
-            mortality_risk.append('You are at high mortality risk.')
-        else:
-            mortality_risk.append('You are at low mortality risk.')
-    return mortality_risk
+def results():
+    
+      if flask.request.method == 'POST':
+            age = request.form.get("age")
+
+
+            if request.form.get("fever"):
+               fever = 1
+            else:
+                fever=0
+            if request.form.get("hypertension"):
+                hypertension = 1
+            else:
+                hypertension =0
+            if request.form.get("diabetes"):
+                diabetes = 1
+            else:
+                diabetes = 0
+            if request.form.get("cvd"):
+                cvd = 1
+            else:
+                cvd = 0
+            if request.form.get("copd"):
+                copd = 1
+            else:
+                copd = 0
+            if request.form.get("cancer"):
+                cancer = 1
+            else:
+                cancer = 0
+            if request.form.get("kidneydisease"):
+                kidneydisease = 1
+            else:
+                kidneydisease = 0
+            if request.form.get("fever"):
+                fever = 1
+            else:
+                fever = 0
+            if request.form.get("breath"):
+                breath = 1
+            else:
+                breath = 0
+            if request.form.get("cough"):
+                cough = 1
+            else:
+                cough = 0
+            if request.form.get("tachypnea"):
+                tachypnea = 1
+            else:
+                tachypnea = 0
+            if request.form.get("fatigue"):
+                fatigue = 1
+            else:
+                fatigue = 0
+            if request.form.get("diarrhea"):
+                diarrhea = 1
+            else:
+                diarrhea = 0
+            
+            
+            predicted_result = predictRisk(age, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea)
+
+            if predicted_result == 0:
+                result = "Low Risk"
+            else:
+                result = "High Risk"
+                
+            return  render_template('result.html', prediction=result)
+
+#return  f' Predicated_result :{predicted_result} Input Values are: {age} {hypertension} { diabetes } {cvd} { copd} {cancer} {kidneydisease} {fever} {breath} {cough} {tachypnea} {fatigue} {diarrhea}'
 
 
 
