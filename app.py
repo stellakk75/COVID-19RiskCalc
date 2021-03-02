@@ -62,18 +62,18 @@ def correlation():
 def aboutUs():
     return render_template("6bio.html")
 
-def predictRisk(age, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea) -> []: 
+def predictRisk(age, gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea) -> []: 
 
     ### Initialize:
     # Intialize error = No
     error_flag = False
     predicted_result = None
-    input = {"age":[age], "hypertension":[hypertension], "diabetes":[diabetes], \
+    input = {"age":[age], "gender":[gender], "hypertension":[hypertension], "diabetes":[diabetes], \
                  "cvd":[cvd], "copd":[copd], "cancer":[cancer], \
                  "kidney disease":[kidneydisease], "fever":[fever], "shortness of breath":[breath], \
                 "cough":[cough], "tachypnea":[tachypnea], "fatigue":[fatigue], "diarrhea":[diarrhea]}
     input_df = pd.DataFrame(input)
-    filename = "LogisticRegression/predictorRisk1.sav"
+    filename = "LogisticRegression/predictorRisk2.sav"
     risk_model = pickle.load(open(filename, 'rb'))
     predicted_result = risk_model.predict(input_df)[0]
     print(("Predicted result : {}").format(predicted_result))
@@ -94,6 +94,7 @@ def results():
     
       if flask.request.method == 'POST':
             age = request.form.get("age")
+            gender_enter = request.form.get("gender")
 
 
             if request.form.get("fever"):
@@ -146,11 +147,14 @@ def results():
                 fatigue = 0
             if request.form.get("diarrhea"):
                 diarrhea = 1
+            if (gender_enter == "Male"):
+                gender = 1
             else:
                 diarrhea = 0
+                gender = 0
             
             
-            predicted_result = predictRisk(age, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea)
+            predicted_result = predictRisk(age,gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea)
 
             if predicted_result == 0:
                 result = "Low Risk"
