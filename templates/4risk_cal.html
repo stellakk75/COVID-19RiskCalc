@@ -10,28 +10,37 @@
     </div>
     
     <div class="w3-row-padding">
-    
+      <div class="w3-container w3-center "  id="P&S">
+        <h2>COVID19 Mortality Risk Calculator</h2>
+        </div>
     <div class="w3-whole">
       <form class="form-horizontal" action="/results" method="POST">
-      <h2>Risk Factors Calculation</h2>
+
       <div class="w3-section">      
-        <input class="w3-input" type="text" required name=age>
+        <input class="w3-input" style="width: 300px;" required type="number" required min = "0" max="100" required name=age placeholder="Input Numerical Values 0 to 100">
+
         <label>Age</label>
       </div>
+
       <div class="w3-section">      
+        <br>
         <label for="cars">Gender</label>
             <select id="gender" name="gender_type">
             <option value="-">Choose your gender</option>
-            <option value="Female">Female</option>
             <option value="Male">Male</option>
+            <option value="Female">Female</option>
    
         </select>
       </div>
+
+
       <div class="col-md-4">
       <div class="w3-half">
-        <label>Precondition</label>
+        <br>
+        <label>Pre-existing Conditions (Check all that applies)</label>
         <br>
         <!-- <input type=“checkbox” name=hypertension" value=“1” checked> -->
+
         <input id="hypertension" class="w3-check" type="checkbox" name="hypertension">
         <label>Hypertension</label>
         <br>
@@ -42,22 +51,23 @@
         <label>Cardiovascular Disease</label>
         <br>
         <input id="copd" class="w3-check" type="checkbox" name="copd" >
-        <label>Chronic Obstructure Lung</label>
+        <label>Chronic Bronchitis/Emphysema (COPD)</label>
         <br>
         <input id="cancer" class="w3-check" type="checkbox" name="cancer">
-        <label>Any Cancer</label>
+        <label>Any Cancer/Malignancy</label>
         <br>
         <input id="kidneydisease" class="w3-check" type="checkbox" name="kidneydisease">
-        <label>Chronic Kidney Disease</label>
+        <label>Chronic Renal/Kidney Disease</label>
         <br><br>
       </div>
     </div>
 
     <div class="col-md-4">
     <div class="w3-half">
-      <label>Symptoms</label><br>
+      <br>
+      <label>Symptoms (Check all that applies)</label><br>
       <input id="Fever" class="w3-check" type="checkbox" name="fever">
-      <label>Fever</label>
+      <label>Fever (Temperature >37C or 98.6F) </label>
       <br>
       <input id="breath" class="w3-check" type="checkbox" name="breath">
       <label>Shortness of Breath</label>
@@ -66,7 +76,7 @@
       <label>Cough</label>
       <br>
       <input id="tachypnea" class="w3-check" type="checkbox" name="tachypnea">
-      <label>Tachypnea (Fast Breathing Rate)</label>
+      <label>Tachypnea (Breathing Rate >20/min)</label>
       <br>
       <input id="Fatigue" class="w3-check" type="checkbox" name="fatigue">
       <label>Fatigue</label>
@@ -75,7 +85,7 @@
       <label>Diarrhea</label>
       <br><br>
 
-      <input class="w3-input" type="submit" required>
+      <!-- <input class="w3-input" type="submit" required> -->
       <button>Calculate</button>
     </div>
   </div>
@@ -127,4 +137,5 @@
 
 </body>
 </html>
+
 {% endblock %}
