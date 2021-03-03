@@ -83,7 +83,6 @@ def results():
             age = request.form.get("age")
             gender_enter = request.form.get("gender_type")
 
-
             if request.form.get("fever"):
                fever = 1
             else:
@@ -139,7 +138,7 @@ def results():
             if (gender_enter == "Male"):
                 gender = 1
             else:
-                gender = 0
+                gender=0
             
             
             predicted_result = predictRisk(age,gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, diarrhea, fatigue)
@@ -149,8 +148,8 @@ def results():
             else:
                 result = "High Risk"
                 
-            # return  render_template('result.html', prediction=result)
-            # return  '{} {} {} {} '.format(age, gender, hypertension)
+            return  render_template('result.html', prediction=result)
+            # return  '{} {} {} '.format(age, gender, hypertension)
             # return age, gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, diarrhea, fatigue 
 
 
