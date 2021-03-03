@@ -2,15 +2,35 @@
 
 <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="intro">
 
-  <div class="w3-third">
-  <h2>Our Work</h2>
-  <p> Data source. Intent. (Covid, mortality, etc) Questions. Demographics</p>
-  </div>
+  <div class="w3">
+  <h2>Our Data</h2>
+  <p>Intent: Our project is to use machine learning to identify patient populations at risk for COVID 19 mortality.</p>
+ 
+  <p>Data used for the project was based on a compilation of international research publications created by ***. 
+    Each row represents a population of patients with a rich amount of medical information: such as percentage 
+    breakdown of gender, ethnicity, past travel and medical history, symptoms, treatment plan and mean population 
+    values for age, lab results (CBC, WBC, liver enzymes) to list a few.</p> 
+    
+  <p>We focused on age, gender, medical history (pre-existing conditions) and symptoms. The dataset was filtered to 
+    include populations with adequately reported data and the dataset size was augmented to allow for application of 
+    machine learning. All pertaining data to our selected population were tested COVID 19 positive. To apply logistic 
+    regression model in determining populations at low or high covid19 mortality risk, the rate of mortality was 
+    converted to binary values using the mean of the column as a sorting factor.
+    The demographic for our dataset can be seen below/to the right. Please click through the different demographic 
+    sections to understand the patient population within our data.</p>
+    
+  <p>Data source: embed link here</p>
   
-  <div class="w3-twothird">
+
+  <br>
+  <br>
+
+  </div>
+
+  <!-- <div class="w3-half style="position:relative"> -->
   <div class="w3-card w3-white">
     <div class="w3-container">
-      <div class='tableauPlaceholder' id='viz1614730366525' style='position: relative'>
+      <div class='tableauPlaceholder' id='viz1614730366525' style='position: relative' >
         <noscript>
           <a href='#'>
         <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T8&#47;T8324J3T2&#47;1_rss.png' style='border: none' />
@@ -26,12 +46,13 @@
         <param name='display_overlay' value='yes' />
         <param name='display_count' value='yes' />
         <param name='language' value='en' />
+        <param name='device' value='phone'/>
       </object>
     </div>                
     <script type='text/javascript'>                    
     var divElement = document.getElementById('viz1614730366525');                    
     var vizElement = divElement.getElementsByTagName('object')[0];                    
-    vizElement.style.width='800px';vizElement.style.height='927px';                    
+    vizElement.style.width='850px';vizElement.style.height='877px';                   
     var scriptElement = document.createElement('script');                    
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
     vizElement.parentNode.insertBefore(scriptElement, vizElement);                
@@ -39,8 +60,8 @@
     </div>
     </div>
   </div>
-  </div>
-
+  <!-- </div> -->
+  
 {% endblock %}
 </body>
 </html>

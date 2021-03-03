@@ -2,27 +2,27 @@
 
 
 <!--  Pre-conditions -->
-<div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S">
-    <div class="w3-whole" >
-    
-    <h2>Is there a correlation based on symptoms experienced and the pre-existing conditions?</h2>
-    </div>
-   
+<div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S" >
    
     
+    <h2>Correlation Matrix</h2>
 
-    <div class="w3-half"></div>
-        <div class="w3-container">
-            <img src="../static/images/correlationMatrix.png" alt="confusion">
-        </div>
+    <img src="../static/images/correlationMatrix.png" alt="confusion" width = "800" height="600">
 
-        <div class="w3-half">
-            <h2>Explanation</h2>
-            <p> explanation</p>
-        </div>    
+<!-- </div> -->
+
+<!-- <div class="w3-half w3-padding-64 w3-theme-l5  w3-left "  id="P&S" height: > -->
+    <h2>Explanation</h2>
+    <p>To observe any correlation within and between the categories of pre-existing conditions and symptoms, 
+    we use matplotlib and seaborn to create a correlation matrix for each feature. Higher correlation is 
+    noted in patient populations who had underlying illnesses of COPD/lung disease and diabetes or COPD/lung
+    disease and chronic kidney disease. Within the hypertension column, patients mostly had shortness of 
+    breath followed by fatigue as a symptom. Fever and cough symptoms usually presented together followed 
+    by cough and diarrhea. By using correlation matrixes with data for a specific hospital patient demographic, 
+    this can be helpful for clinicians to identify trends and patterns seen in Covid19 patients.  </p>
+
     </div>
 
-</div>
 
 {% endblock %}
 </body>

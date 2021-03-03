@@ -3,18 +3,28 @@
 <!--  Pre-conditions -->
 <div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S">
     <!-- <div class="w3-half" > -->
-        <h2>Is there increase in COVID19 mortality based on preexisting conditions and/or symptoms?</h2>
-        <br>
+        <!-- <h2>Is there increase in COVID19 mortality based on preexisting conditions and/or symptoms?</h2>
+        <br> -->
         <h2>Logistic Regression Risk Model</h2>
         <img src="../static/images/classification_report.png" alt="classification" width = "600" height="300" style="margin-right:2cm;">
         
         <img src="../static/images/confusionMatrix.png" alt="confusion" width = "600" height="400">
         <!-- <div class="w3-half"> -->
             <h2>Our Risk Model Explanation</h2>
-            <p> explanation</p>
+            <p>Our risk model initially uses the classifier method to narrow contributing factors with higher feature 
+                importance for covid19 mortality predictions which are age, gender and the top 6 features of each category 
+                in pre-existing conditions and symptoms. </p>
+                <p>Then, logistic regression model is applied which shows an accuracy score of 0.88. Although the low-risk population scores 
+                are in the 92th percentile, the high risk population scores are in the 66th percentile shows more reliability on predicting 
+                low risk rather than high risk populations. In a clinical setting, it would be preferred to identify high risk individuals so 
+                that they may receive more aggressive medical care. </p>
+                <p>The confusion matrix shows that the logistic regression model is able to correctly identify 87.5% (75% true low risk 
+                = predicted low risk + 12.5% true high risk = predicted high risk) of its test data into their respective risk category which shows a 
+                strong mortality risk classification capability.   
+                </p>
         </div>
     </div>
-    <br><br><br><br><br><br>
+    <!-- <br><br><br><br><br><br> -->
     <!-- <div class="w3-half"></div>
     <div class="w3-container">
         <img src="../static/images/confusionMatrix.png" alt="confusion">
@@ -24,9 +34,7 @@
         <h2>Explanation</h2>
         <p> explanation</p>
     </div>     -->
-</div>
 
-</div> 
 {% endblock %}
 </body>
 </html>
