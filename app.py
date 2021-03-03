@@ -24,19 +24,6 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 CORS(app)
 
-#Define database connection
-# conn_string = "host="+ creds.PGHOST +" port="+ "5432" +" dbname="+ creds.PGDATABASE +" user=" + creds.PGUSER \
-#                   + " password=" + creds.PGPASSWORD
-
-# print(conn_string)
-# conn = psycopg2.connect(conn_string)
-# print("Connected!")
-  
-
-# covid_df = pd.read_sql_query(
-#                    ''' SELECT * FROM coviddata 
-#                    ''' , conn)
-
 #Routes 
 @app.route("/")
 def home():
@@ -154,7 +141,7 @@ def results():
                 gender = 0
             
             
-            predicted_result = predictRisk(age,gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, breath, cough, tachypnea, fatigue, diarrhea)
+            predicted_result = predictRisk(age,gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, fatigue, diarrhea)
 
             if predicted_result == 0:
                 result = "Low Risk"
@@ -163,7 +150,6 @@ def results():
                 
             return  render_template('result.html', prediction=result)
 
-#return  f' Predicated_result :{predicted_result} Input Values are: {age} {hypertension} { diabetes } {cvd} { copd} {cancer} {kidneydisease} {fever} {breath} {cough} {tachypnea} {fatigue} {diarrhea}'
 
 
 
