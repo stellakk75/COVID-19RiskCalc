@@ -4,21 +4,21 @@
 <div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S">
     <!-- <h2>Age</h2>
     <br> -->
-    <h2>Clustering Model</h2>
+    <h2>Age Risk Model</h2>
         <img src="../static/images/ageCluster.png" alt="age_risk" width = "700" height="400">
 
         <img src="../static/images/age_risk.png" alt="age_risk" width = "600" height="300">
 
 
-    <h2>Age Risk Explanation</h2>
-    <p>To better understand age in correlation with mortality risk, we applied clustering method using KMeans=6 with age 
-        and mortality columns only. For visualization, data was grouped and sorted by predicted clusters and calculated for 
-        age ranges and average mortality risk within the clusters. According to the machine learning model, cluster 0 or ages 
-        over 65 were at highest risk for Covid19 mortality. This is consistent with vaccine policy of ages 65+ being one of 
-        the first population groups to qualify for phase 1. Interesting to note was cluster 5 or ages 12 to 25 which had a higher 
-        mortality risk than older populations. This may be due to an increase in substance abuse, unmanaged mental health illnesses 
-        as seen by increase in opioid overdoses and mental health hospitalizations. A thought to consider is this age group’s 
-        invincibility perception as seen by continual socialization such as Covid parties. </p>
+    <h2>Considerations</h2>
+    <p>To better understand the correlation between age COVID-19 mortality risk, we used KMeans = 6  with age 
+        and mortality. For visualization, data was grouped and sorted by "predicted clusters" and calculated for 
+        age range and average mortality risk. According to the machine learning model, cluster 0 or ages 
+        65+ were at highest risk for COVID-19 mortality. This is consistent with vaccine policy of ages 65+ being one of 
+        the first population groups to qualify for vaccination. Interesting to note was cluster 5 or ages 12 to 25 had a higher 
+        mortality risk than older populations. This may be due to an increase in substance abuse and/or poorly managed mental health issues 
+        as reported in current events' increase in opioid overdoses and mental health hospitalizations. Additional consideration is the
+        invincible behavior demonstrated through continual socialization (e.g. Covid parties). </p>
     </div>
 
 {% endblock %}
