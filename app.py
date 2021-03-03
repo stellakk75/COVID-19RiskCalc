@@ -81,8 +81,7 @@ def results():
     
       if flask.request.method == 'POST':
             age = request.form.get("age")
-            gender_enter = request.form.get("gender")
-
+            gender_enter = request.form.get("gender_type")
 
             if request.form.get("fever"):
                fever = 1
@@ -134,14 +133,15 @@ def results():
                 fatigue = 0
             if request.form.get("diarrhea"):
                 diarrhea = 1
+            else:
+                diarrhea = 0
             if (gender_enter == "Male"):
                 gender = 1
             else:
-                diarrhea = 0
-                gender = 0
+                gender=0
             
             
-            predicted_result = predictRisk(age,gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, fatigue, diarrhea)
+            predicted_result = predictRisk(age,gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, diarrhea, fatigue)
 
             if predicted_result == 0:
                 result = "Low Risk"
@@ -149,6 +149,8 @@ def results():
                 result = "High Risk"
                 
             return  render_template('result.html', prediction=result)
+            # return  '{} {} {} '.format(age, gender, hypertension)
+            # return age, gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, diarrhea, fatigue 
 
 
 
