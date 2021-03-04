@@ -1,9 +1,8 @@
 {% extends "layout.html" %} {% block content %}
 
-<!-- Age -->
+
 <div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S">
-    <!-- <h2>Age</h2>
-    <br> -->
+
     <h2>Age Risk Model</h2>
         <img src="../static/images/ageCluster.png" alt="age_risk" width = "700" height="400">
 
@@ -11,11 +10,11 @@
 
 
     <h2>Considerations</h2>
-    <p>To better understand the correlation between age COVID-19 mortality risk, we used KMeans = 6  with age 
+    <p style="margin-left:1cm; margin-right:1cm;" align="left">To better understand the correlation between age and COVID-19 mortality risk, we used KMeans = 6  with age 
         and mortality. For visualization, data was grouped and sorted by "predicted clusters" and calculated for 
         age range and average mortality risk. According to the machine learning model, cluster 0 or ages 
-        65+ were at highest risk for COVID-19 mortality. This is consistent with vaccine policy of ages 65+ being one of 
-        the first population groups to qualify for vaccination. Interesting to note was cluster 5 or ages 12 to 25 had a higher 
+        65+ is at highest risk for COVID-19 mortality. This is consistent with vaccine policy of ages 65+ being one of 
+        the first population groups to qualify for vaccination. Interesting to note was cluster 5, or ages 12 to 25, had a higher 
         mortality risk than older populations. This may be due to an increase in substance abuse and/or poorly managed mental health issues 
         as reported in current events' increase in opioid overdoses and mental health hospitalizations. Additional consideration is the
         invincible behavior demonstrated through continual socialization (e.g. Covid parties). </p>

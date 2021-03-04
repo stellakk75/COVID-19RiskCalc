@@ -1,6 +1,5 @@
 {% extends "layout.html" %} {% block content %}
 
-  <!-- Header -->
 
   <div margin: 10 auto;>
 
@@ -13,7 +12,7 @@
       <div class="w3-container w3-center "  id="P&S">
         <h2>COVID-19 Mortality Risk Calculator</h2>
         </div>
-    <div class="w3-whole">
+    <div class="w3-whole" style="margin-left:2cm;">
       <form class="form-horizontal" action="/results" method="POST">
 
       <div class="w3-section">      
@@ -24,7 +23,7 @@
 
       <div class="w3-section">      
         <br>
-        <!-- <input class="w3-input" style="width: 400px;" required type="text" placeholder="Choose your gender"> -->
+    
             <select required name="gender_type">
             <option value="">Choose your gender</option>
             <option value="Male">Male</option>
@@ -39,8 +38,6 @@
         <br>
         <label>Pre-existing Conditions (Check all that applies)</label>
         <br>
-        <!-- <input type=“checkbox” name=hypertension" value=“1” checked> -->
-
         <input id="hypertension" class="w3-check" type="checkbox" name="hypertension">
         <label>Hypertension</label>
         <br>
@@ -85,7 +82,6 @@
       <label>Diarrhea</label>
       <br><br>
 
-      <!-- <input class="w3-input" type="submit" required> -->
       <button>Calculate</button>
     </div>
   </div>
@@ -99,15 +95,6 @@
     <br><br><br>
     
     <div class="w3-row-padding">
-
-    <!-- <div class="w3-whole">
-    <form class="w3-container w3-card-4">
-      <label for="output">Your Risk Calculations :</label><input type="text" name="output" value=0></input>
-      <div class="col-md-4">
-      <div class="w3-half">
-    </div>
-  </div> -->
-
 
 
   <script>

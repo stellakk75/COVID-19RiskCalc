@@ -1,38 +1,26 @@
 {% extends "layout.html" %} {% block content %}
 
-<!--  Pre-conditions -->
 <div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S">
-    <!-- <div class="w3-half" > -->
-        <!-- <h2>Is there increase in COVID19 mortality based on preexisting conditions and/or symptoms?</h2>
-        <br> -->
+    
         <h2>COVID-19 Mortality Risk Model</h2>
         <img src="../static/images/classification_report.png" alt="classification" width = "600" height="300" style="margin-right:2cm;">
         
         <img src="../static/images/confusionMatrix.png" alt="confusion" width = "600" height="400">
-        <!-- <div class="w3-half"> -->
+        
             <h2>Considerations</h2>
-            <p>Our risk model uses the classifier method to narrow contributing factors with high feature 
+            <p style="margin-left:1cm; margin-right:1cm;" align="left">Our risk model uses the classifier method to narrow contributing factors with high feature 
                 importance for COVID-19 mortality predictions. The contributing factors are narrowed to age, gender, 
                 and the top 6 features of each category in pre-existing conditions and symptoms. </p>
-            <p>Logistic regression model is applied which shows an accuracy score of 0.88. Although the low-risk population f1-score 
+            <p style="margin-left:1cm; margin-right:1cm;" align="left">Logistic regression model is applied which shows an accuracy score of 0.88. Although the low-risk population f1-score 
             is 92%, the high risk population f1-score is only 66%, showing higher precision and recall for 
             low rather than high risk populations. </p>
-            <p>The confusion matrix shows that the logistic regression model is able to accurately identify 87.5% ((75% true low risk 
+            <p style="margin-left:1cm; margin-right:1cm;" align="left">The confusion matrix shows that the logistic regression model is able to accurately identify 87.5% ((75% true low risk 
             = predicted low risk) + (12.5% true high risk = predicted high risk)) of its test data into their respective risk categories which show 
             strong predictive capabilities.   
             </p>
         </div>
     </div>
-    <!-- <br><br><br><br><br><br> -->
-    <!-- <div class="w3-half"></div>
-    <div class="w3-container">
-        <img src="../static/images/confusionMatrix.png" alt="confusion">
-    </div>
 
-    <div class="w3-half">
-        <h2>Explanation</h2>
-        <p> explanation</p>
-    </div>     -->
 
 {% endblock %}
 </body>

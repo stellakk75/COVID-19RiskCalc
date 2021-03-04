@@ -2,18 +2,11 @@
 import os
 import numpy as np
 import pandas as pd
-import sqlalchemy
 import flask
 from flask_cors import CORS
 from flask import Flask, render_template, redirect, jsonify,request
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from flask import Flask, jsonify
 import psycopg2
 # import config as creds
-import numpy as np
-import pandas as pd
 from sklearn.linear_model import LogisticRegression
 import pickle
 from datetime import date
@@ -149,10 +142,6 @@ def results():
                 result = "High Risk"
                 
             return  render_template('result.html', prediction=result)
-            # return  '{} {} {} '.format(age, gender, hypertension)
-            # return age, gender, hypertension, diabetes, cvd, copd, cancer, kidneydisease, fever, tachypnea , cough, breath, diarrhea, fatigue 
-
-
 
 
 if __name__ == "__main__":

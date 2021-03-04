@@ -1,27 +1,27 @@
 {% extends "layout.html" %} {% block content %}
 
 
-<!--  Pre-conditions -->
-<div class="w3-container w3-padding-64 w3-theme-l5  w3-center "  id="P&S" >
-   
+<div class="w3-container w3-padding-64 w3-theme-l5 w3-center"  id="P&S" >
     
     <h2>Underlying Conditions and Symptoms Correlation</h2>
-    <img src="../static/images/correlationmatrix.png" alt="confusion" width = "800" height="600">
-    <!-- <img src="../static/images/correlationMatrix.png" alt="confusion" width = "800" height="600"> -->
-
-<!-- </div> -->
-
-<!-- <div class="w3-half w3-padding-64 w3-theme-l5  w3-left "  id="P&S" height: > -->
-    <h2>Considerations</h2>
-    <p>To observe any correlation between pre-existing conditions and symptoms, 
-    we use matplotlib and seaborn to create a correlation matrix for each feature. Higher correlation is 
-    noted in patient populations with underlying combination of COPD/lung disease and diabetes or COPD/lung
+    <img src="../static/images/correlationmatrix.png" alt="confusion" width = "850" height="650" align="left" style="margin-left:.5cm;" >
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+  <h2 style="margin-left:1cm; margin-right:1cm;" align="center">Considerations</h2>
+ <p style="margin-left:1cm; margin-right:1cm;" align='left'>To observe any correlation between pre-existing conditions and symptoms, 
+    we used matplotlib and seaborn to create a correlation matrix for each feature. Higher correlation is 
+    noted in patient populations with underlying combinations of COPD/lung disease and diabetes or COPD/lung
     disease and chronic kidney disease. Within the hypertension feature, there was a higher association with shortness of 
     breath followed by fatigue. Fever and cough symptoms were correlated as well as cough and diarrhea. 
   </p>
 
     </div>
-
 
 {% endblock %}
 </body>
