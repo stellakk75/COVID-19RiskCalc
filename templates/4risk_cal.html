@@ -1,39 +1,34 @@
 {% extends "layout.html" %} {% block content %}
 
 
-  <div margin: 10 auto;>
-
+<div margin: 10 auto;>
   <header class="w3-container" style="padding-top:22px;padding-left:2000px">
     <hr>
+</div>
+    
+<div class="w3-row-padding">
+  <div class="w3-container w3-center "  id="P&S">
+    <h2>COVID-19 Mortality Risk Calculator</h2>
+  </div>
+  
+  <div class="w3-whole" style="margin-left:2cm;">
+    <form class="form-horizontal" action="/results" method="POST">
 
+    <div class="w3-section">      
+      <input class="w3-input" style="width: 400px;" required type="number" required min = "0" max="100" required name=age placeholder="Input Numerical Values 0 to 100">
+      <label>Age</label>
     </div>
-    
-    <div class="w3-row-padding">
-      <div class="w3-container w3-center "  id="P&S">
-        <h2>COVID-19 Mortality Risk Calculator</h2>
-        </div>
-    <div class="w3-whole" style="margin-left:2cm;">
-      <form class="form-horizontal" action="/results" method="POST">
 
-      <div class="w3-section">      
-        <input class="w3-input" style="width: 400px;" required type="number" required min = "0" max="100" required name=age placeholder="Input Numerical Values 0 to 100">
-
-        <label>Age</label>
-      </div>
-
-      <div class="w3-section">      
-        <br>
-    
-            <select required name="gender_type">
-            <option value="">Choose your gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-   
+    <div class="w3-section">      
+      <br>
+        <select required name="gender_type">
+        <option value="">Choose your gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
         </select>
-      </div>
+    </div>
 
-
-      <div class="col-md-4">
+    <div class="col-md-4">
       <div class="w3-half">
         <br>
         <label>Pre-existing Conditions (Check all that applies)</label>
@@ -60,69 +55,68 @@
     </div>
 
     <div class="col-md-4">
-    <div class="w3-half">
-      <br>
-      <label>Symptoms (Check all that applies)</label><br>
-      <input id="Fever" class="w3-check" type="checkbox" name="fever">
-      <label>Fever (Temperature >37C or 98.6F) </label>
-      <br>
-      <input id="breath" class="w3-check" type="checkbox" name="breath">
-      <label>Shortness of Breath</label>
-      <br>
-      <input id="Cough" class="w3-check" type="checkbox" name="cough">
-      <label>Cough</label>
-      <br>
-      <input id="tachypnea" class="w3-check" type="checkbox" name="tachypnea">
-      <label>Tachypnea (Breathing Rate >20/min)</label>
-      <br>
-      <input id="Fatigue" class="w3-check" type="checkbox" name="fatigue">
-      <label>Fatigue</label>
-      <br>
-      <input id="diarrhea" class="w3-check" type="checkbox" name="diarrhea">
-      <label>Diarrhea</label>
-      <br><br>
+      <div class="w3-half">
+        <br>
+        <label>Symptoms (Check all that applies)</label><br>
+        <input id="Fever" class="w3-check" type="checkbox" name="fever">
+        <label>Fever (Temperature >37C or 98.6F) </label>
+        <br>
+        <input id="breath" class="w3-check" type="checkbox" name="breath">
+        <label>Shortness of Breath</label>
+        <br>
+        <input id="Cough" class="w3-check" type="checkbox" name="cough">
+        <label>Cough</label>
+        <br>
+        <input id="tachypnea" class="w3-check" type="checkbox" name="tachypnea">
+        <label>Tachypnea (Breathing Rate >20/min)</label>
+        <br>
+        <input id="Fatigue" class="w3-check" type="checkbox" name="fatigue">
+        <label>Fatigue</label>
+        <br>
+        <input id="diarrhea" class="w3-check" type="checkbox" name="diarrhea">
+        <label>Diarrhea</label>
+        <br><br>
 
-      <button>Calculate</button>
+        <button>Calculate</button>
+      </div>
     </div>
-  </div>
 
-  <div margin: 10 auto;></div>
+    <div margin: 10 auto;></div>
 
-  <header class="w3-container" style="padding-top:22px;padding-left:2000px">
+    <header class="w3-container" style="padding-top:22px;padding-left:2000px">
     <hr>
-
-    </div>
-    <br><br><br>
+  </div>
+  <br><br><br>
     
-    <div class="w3-row-padding">
+  <div class="w3-row-padding">
 
-
-  <script>
-    // Get the Sidebar
-    var mySidebar = document.getElementById("mySidebar");
-    
-    // Get the DIV with overlay effect
-    var overlayBg = document.getElementById("myOverlay");
-    
-    // Toggle between showing and hiding the sidebar, and add overlay effect
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-      } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
+    <script>
+      // Get the Sidebar
+      var mySidebar = document.getElementById("mySidebar");
+      
+      // Get the DIV with overlay effect
+      var overlayBg = document.getElementById("myOverlay");
+      
+      // Toggle between showing and hiding the sidebar, and add overlay effect
+      function w3_open() {
+        if (mySidebar.style.display === 'block') {
+          mySidebar.style.display = 'none';
+          overlayBg.style.display = "none";
+        } else {
+          mySidebar.style.display = 'block';
+          overlayBg.style.display = "block";
+        }
       }
-    }
     
-    // Close the sidebar with the close button
-    function w3_close() {
-      mySidebar.style.display = "none";
-      overlayBg.style.display = "none";
-    }
-  </script>
+      // Close the sidebar with the close button
+      function w3_close() {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+      }
+    </script>
 
 </body>
 </html>
+
 
 {% endblock %}

@@ -30,17 +30,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", monospace}
 
 <!-- Navbar -->
 <div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-left-align">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-red"><i class="fa fa-home w3-margin-right"></i>Home</a>
-  <!-- <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Data</a> -->
-  <a href="{{ url_for('ageRisk') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Age Risk</a>
-  <a href="{{ url_for('ourModel') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Risk Model</a>
-  <a href="{{ url_for('riskCalculator') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Risk Calculator</a>
-  <a href="{{ url_for('correlation') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Correlation</a>
-  <a href="{{ url_for('aboutUs') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
-   
- </div>
+
+  <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-red"><i class="fa fa-home w3-margin-right"></i>Home</a>
+    <!-- <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Data</a> -->
+    <a href="{{ url_for('ageRisk') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Age Risk</a>
+    <a href="{{ url_for('ourModel') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Our Risk Model</a>
+    <a href="{{ url_for('riskCalculator') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Risk Calculator</a>
+    <a href="{{ url_for('correlation') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Correlation</a>
+    <a href="{{ url_for('aboutUs') }}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>  
+  </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
@@ -50,19 +50,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", monospace}
     <a href="{{ url_for('riskCalculator') }}" class="w3-bar-item w3-button">Risk Calculator</a>
     <a href="{{ url_for('correlation') }}" class="w3-bar-item w3-button">Correlation</a>
     <a href="{{ url_for('aboutUs') }}" class="w3-bar-item w3-button">About Us</a>
-
-
   </div>
+
 </div>
 
 <!-- Image Header -->
 <head class="w3-display-container w3-animate-opacity">
   <img src="../static/images/web.png" alt="boat" style="width:100%;min-height:250px;max-height:250px;">
-  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-    
-  </div>
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom"> </div>
 </header>
-
 
 <!-- Container -->
 <div class="w3-container" style="position:relative">
@@ -70,30 +66,29 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", monospace}
   style="position:absolute;top:-28px;right:24px">+</a>
 </div>
 
-
 <script>
 // Script for side navigation
-function w3_open() {
-  var x = document.getElementById("mySidebar");
-  x.style.width = "300px";
-  x.style.paddingTop = "10%";
-  x.style.display = "block";
-}
-
-// Close side navigation
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
+  function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
   }
-}
+
+  // Close side navigation
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+
+  // Used to toggle the menu on smaller screens when clicking on the menu button
+  function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
 </script>
 
 

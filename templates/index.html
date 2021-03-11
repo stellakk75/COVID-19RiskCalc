@@ -1,68 +1,68 @@
 {% extends "layout.html" %} {% block content %}
 
 <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="intro">
-
+  
+<!-- Write Up on data -->
   <div class="w3-container">
-  <h2 style="margin-left:1cm;" style="margin-right:1cm;">Our Data</h2>
-  <p style="margin-left:1cm;" style="margin-right:1cm;">Intent: Our project is to use machine learning to identify patient populations at risk for COVID-19 mortality.</p>
- 
-  <p style="margin-left:1cm; margin-right:1cm;">Data used for the project was based on a compilation of international clinical publications created by the team at COVID Analytics. 
-    Each row represents a cohort of patients with a rich amount of medical information: such as percentage 
-    breakdown of gender, ethnicity, past travel and medical history, symptoms, treatment plan and mean population 
-    values for age, lab results (CBC, WBC, liver enzymes) to list a few.</p> 
+    <h2 style="margin-left:1cm;" style="margin-right:1cm;">Our Data</h2>
     
-  <p style="margin-left:1cm; margin-right:1cm;">We focused on age, gender, medical history (pre-existing conditions) and symptoms. The dataset was filtered to 
-    include populations with adequately reported data and the dataset size was augmented to allow for application of 
-    machine learning. All filtered population data for modeling were tested COVID-19 positive. To apply logistic 
-    regression model in determining populations at low or high COVID-19 mortality risk, the rate of mortality was 
-    converted to binary values using the mean as a sorting factor.</p>
-    
+    <p style="margin-left:1cm;" style="margin-right:1cm;">Intent: Our project is to use machine learning to identify patient populations at risk for COVID-19 mortality.</p>
+  
+    <p style="margin-left:1cm; margin-right:1cm;">Data used for the project was based on a compilation of international clinical publications created by the team at COVID Analytics. 
+      Each row represents a cohort of patients with a rich amount of medical information: such as percentage 
+      breakdown of gender, ethnicity, past travel and medical history, symptoms, treatment plan and mean population 
+      values for age, lab results (CBC, WBC, liver enzymes) to list a few.</p> 
+      
+    <p style="margin-left:1cm; margin-right:1cm;">We focused on age, gender, medical history (pre-existing conditions) and symptoms. The dataset was filtered to 
+      include populations with adequately reported data and the dataset size was augmented to allow for application of 
+      machine learning. All filtered population data for modeling were tested COVID-19 positive. To apply logistic 
+      regression model in determining populations at low or high COVID-19 mortality risk, the rate of mortality was 
+      converted to binary values using the mean as a sorting factor.</p>
+      
     <p style="margin-left:1cm; margin-right:1cm;">The demographics for our dataset can be seen below. Please click through the different demographic 
     sections to understand the patient population within our data.</p>
-    
-  <p style="margin-left:1cm; margin-right:1cm;">Data source: <a href="https://www.covidanalytics.io/dataset" target="_blank">Click here</a> </p>
+      
+    <p style="margin-left:1cm; margin-right:1cm;">Data source: <a href="https://www.covidanalytics.io/dataset" target="_blank">Click here</a> </p>
   
-
-  <br>
-  <br>
+    <br>
+    <br>
 
   </div>
 
-  <!-- <div class="w3-half style="position:relative"> -->
-  <!-- <div class="w3-card w3-white"> -->
-     <div class="w3-card">
+<!-- Tableau visualization for patient demographics -->
+  <div class="w3-card">
     <div class="w3-container" style="margin-left:1cm; margin-right:1cm;">
       <div class='tableauPlaceholder' id='viz1614730366525' style='position: relative' >
         <noscript>
           <a href='#'>
-        <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T8&#47;T8324J3T2&#47;1_rss.png' style='border: none'/>
-      </a></noscript><object class='tableauViz'  style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-        <param name='embed_code_version' value='3' /> 
-        <param name='path' value='shared&#47;T8324J3T2' /> 
-        <param name='toolbar' value='no' />
-        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T8&#47;T8324J3T2&#47;1.png' /> 
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='en' />
-  
-      </object>
-    </div>                
-    <script type='text/javascript'>                    
-    var divElement = document.getElementById('viz1614730366525');                    
-    var vizElement = divElement.getElementsByTagName('object')[0];                    
-    vizElement.style.width='850px';vizElement.style.height='877px';                   
-    var scriptElement = document.createElement('script');                    
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-    </script>
-    </div>
+          <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T8&#47;T8324J3T2&#47;1_rss.png' style='border: none'/>
+          </a>
+        </noscript>
+        <object class='tableauViz'  style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+          <param name='embed_code_version' value='3' /> 
+          <param name='path' value='shared&#47;T8324J3T2' /> 
+          <param name='toolbar' value='no' />
+          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;T8&#47;T8324J3T2&#47;1.png' /> 
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en' />
+        </object>
+      </div>    
+      <script type='text/javascript'>                    
+        var divElement = document.getElementById('viz1614730366525');                    
+        var vizElement = divElement.getElementsByTagName('object')[0];                    
+        vizElement.style.width='850px';vizElement.style.height='877px';                   
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+      </script>
     </div>
   </div>
-  <!-- </div> -->
+</div>
   
 {% endblock %}
 </body>

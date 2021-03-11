@@ -1,29 +1,30 @@
 {% extends "layout.html" %} {% block content %}
-<div margin: 10 auto;>
 
+
+<div margin: 10 auto;>
     <header class="w3-container" style="padding-top:22px;padding-left:2000px">
-      <hr>
-  
-      </div>
-      
- <div class="w3-row-padding">
+    <hr>
+</div>
+
+<!-- Mortality Calculator  -->
+<div class="w3-row-padding">
     <div class="w3-container w3-center "  id="P&S">
         <h2>COVID-19 Mortality Risk Calculator</h2>
-        </div>
-<div class="w3-whole w3-container w3-center ">
-    <form class="form-horizontal" action="/results" method="POST">
-</br>
-<h1 style="text-align:center; color:black(179, 45, 45)">You are</h1>
-<h1 style="text-align:center; color:rgb(179, 45, 45)"><strong>{{ prediction }}</strong></h1>
-<br>
-<br>
-<!-- <h1 style="color: black(179, 45, 45)">{{ prediction }}</h1> -->
-<!-- <h1 style="color: rgb(179, 45, 45)">Hurray!!!!!</h1> -->
-
-</div>
+    </div>
+    <!-- Displays prediction results -->
+    <div class="w3-whole w3-container w3-center ">
+        <form class="form-horizontal" action="/results" method="POST">
+        </br>
+        <h1 style="text-align:center; color:black(179, 45, 45)">You are</h1>
+        <h1 style="text-align:center; color:rgb(179, 45, 45)"><strong>{{ prediction }}</strong></h1>
+        <br>
+        <br>    
+    </div>
 </div>
 
 
 {% endblock %}
+
+
 </body>
 </html>
