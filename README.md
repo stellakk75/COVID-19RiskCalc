@@ -1,6 +1,6 @@
 # COVID-19 Mortality Risk Using Machine Learning
 
-### The purpose of this project is to apply machine learning in evaluating COVID-19 mortality risk factors and also creating a predictive mortality risk calculator. We also performed a deep data dive to observe any trends in risk factors for COVID-19. 
+### The purpose of this project is to apply machine learning in evaluating COVID-19 mortality risk factors and also creating a mortality risk predictive calculator. We also performed a deep data dive to observe any trends in risk factors for COVID-19. 
 ### Data Source: https://www.covidanalytics.io/dataset
 
 ### Project includes: 
