@@ -11,7 +11,7 @@ Powerpoint Presentation Link: https://docs.google.com/presentation/d/15Nb194Fm3g
 
 --- 
 
-### Includes: 
+### INCLUDES: 
   * Python Flask- powered API
   * AWS cloud database 
   * HTML/CSS including template extending for front end web development 
