@@ -1,7 +1,8 @@
 # COVID-19 Mortality Risk Using Machine Learning (ML)
 
 ### Intent: Use machine learning to identify patient populations at risk for COVID-19 mortality. Also perform a deep data dive to observe any trends in risk factors for COVID-19.
- 
+
+### URL: https://covidanalysis-team4.herokuapp.com/ 
 ### Data Source: https://www.covidanalytics.io/dataset
 
 ### Project includes: 
@@ -16,11 +17,9 @@
     ![image](https://user-images.githubusercontent.com/70276685/111044949-8710b500-8419-11eb-9d27-8b8423686e4d.png)
   * Matplotlib, Seaborn, Tableau for data visualizations<br/>
     ![image](https://user-images.githubusercontent.com/70276685/111044938-76f8d580-8419-11eb-875d-c0712c3f5d3b.png)
+  * Deployment to Heroku App 
  
  ---
-### Heroku Deployment
-https://covidanalysis-team4.herokuapp.com/ 
-
 ### Group members:
   * Stella Kim
   * Sydney Harkins
