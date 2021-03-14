@@ -1,4 +1,4 @@
-# COVID-19 Mortality Risk Using Machine Learning (ML)
+# COVID-19 Mortality Risk Factors Using Machine Learning (ML)
 
 ### URL: https://covidanalysis-team4.herokuapp.com/ 
 Powerpoint Presentation Link: https://docs.google.com/presentation/d/15Nb194Fm3gB86JEEW0gX1Y887Kh7_8tIVjlJLUbfFes/edit
